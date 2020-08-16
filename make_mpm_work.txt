@@ -1,0 +1,15 @@
+1. install cmake. v
+
+2. link glfw in the project: add the dir of glfw3.h and glfw3.lib to the related compiler options. 
+NOTE: "If you want to use Multithreaded for your application you need to download the GLFW source package, configure it with CMake, change the Runtime Library option in Visual Studio to Multithreaded and compile it."
+How to build: (1) generate VS project using CMake. Make sure USE_MSVC_RUNTIME_LIBRARY_DLL is NOT selected. (2) build the generated VS project, and look for the glfw3.lib under the src directory. (3) put the glfw3.lib in the correct location.
+
+3. glad: an extension loader library. Generated through the web service. Use "No loadaer" option as the GLFW is the loader of OpenGL. Put the corresponding header files in the project. Add the c file to the project. 
+
+4. glm: just include the header files.
+
+5. boost lib: also a header-only library. Need program_options lib. Compile it in c:/program files. Add its path to the linker. And add lib to linker inputs.
+
+6. compile gvdb.(Is there an alternative?)
+
+7. unresolved external symbol ___cudaRegisterLinkedBinary problem: make sure -rdc=true and --compile options. Must be changed in CUDA C/C++ -> common page. Can't do command line in VS.
