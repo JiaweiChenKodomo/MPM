@@ -13,3 +13,7 @@ How to build: (1) generate VS project using CMake. Make sure USE_MSVC_RUNTIME_LI
 6. compile gvdb.(Is there an alternative?)
 
 7. unresolved external symbol ___cudaRegisterLinkedBinary problem: make sure -rdc=true and --compile options. Must be changed in CUDA C/C++ -> common page. Can't do command line in VS.
+
+8. Error LNK2001 unresolved external symbol __fatbinwrap_ ... problem: add cudadevrt.lib to linker.
+
+9. In debug mode, will get some runtime check error because a function in thrust returns an uninitialized variable. This is a deeper problem with the thrust library!
